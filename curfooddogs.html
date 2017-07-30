@@ -1,0 +1,55 @@
+<section>
+<label class={{commercialclicked}} ng-click = "commercialclickedaction()">Commercial Food</label>
+<label class={{homemadeclicked}} ng-click = "homemadeclickedaction()">Home Made Food</label>
+<label class={{bothclicked}} ng-click = "bothclickedaction()">Both</label>
+<aside ng-show = "commbool">
+<br/>
+<form class = "form-inline" name="commbrands">
+<label for = "foodbrands">Brand Name : </label>
+<br/>
+<div class="form-inline">
+<input list="foodbrands" name="foodbrands" ng-model = "mainfile.foodbrands" class= "form-control" required />
+  <datalist id="foodbrands">
+    <option ng-repeat = "x in brands" value = "{{x.name}}"/>
+  </datalist>
+	<span ng-show = "commbrands.foodbrands.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+	<span ng-show = "commbrands.foodbrands.$invalid && commbrands.foodbrands.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+</div>
+</form>
+</aside>
+<aside ng-show= "homemadebool">
+<input type = "checkbox" name = "homemade" value = "homemade" ng-model = "mainfile.homemade"/>I prefer home made food for my dog.
+</aside>
+<aside ng-show = "bothbool">
+<form class="form-inline" name = "bothbrands">
+<label for = "foodbrands">Brand Name : </label>
+<br/>
+<div class="form-inline">
+<input list="foodbrands" name="foodbrands" ng-model = "mainfile.foodbrands" class= "form-control" required />
+  <datalist id="foodbrands">
+    <option ng-repeat = "x in brands" value = "{{x}}"/>
+  </datalist>
+	<span ng-show = "bothbrands.foodbrands.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+	<span ng-show = "bothbrands.foodbrands.$invalid && bothbrands.foodbrands.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+</div>
+
+<br/> <br/>
+<input type = "checkbox" name = "homemade" value = "homemade" ng-model = "mainfile.homemade"/>I prefer home made food for my dog.
+</form>
+</aside>
+<div class = "buttonGroup1">
+		<a ng-href = '#/unusualdogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/allergyfoodsdogs'><button class="btn btn-primary" ng-show = "(commercialclicked == 'btn btn-primary active' && commbrands.foodbrands.$valid) || (bothclicked == 'btn btn-primary active' && bothbrands.foodbrands.$valid && mainfile.homemade == true) || (homemadeclicked == 'btn btn-primary active' && mainfile.homemade == true)" ng-click = "post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		<button class="btn btn-primary" ng-hide = "(commercialclicked == 'btn btn-primary active' && commbrands.foodbrands.$valid) || (bothclicked == 'btn btn-primary active' && bothbrands.foodbrands.$valid && mainfile.homemade == true) || (homemadeclicked == 'btn btn-primary active' && mainfile.homemade == true)">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button>
+</div>
+
+</section>

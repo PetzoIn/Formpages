@@ -1,0 +1,68 @@
+<section>
+<span> <b>Any unusual eating habits we should know about ?</b> </span>
+<form class = "form-horizontal" name = "unusualshiz">
+<div class = "noissues">
+<input type = "checkbox" id = "noissues2" name = "noissues2" ng-model = "mainfile.nounusual">
+<label for = "noissues2">
+None
+</label>
+</input>
+</div>
+<div class = "mud">
+<input type = "checkbox" id = "mud2" name = "mud2" ng-model = "mainfile.mud2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "mud2">
+Mud
+</label>
+</div>
+<div class = "grass">
+<input type = "checkbox" id = "grass2" name = "grass2" ng-model = "mainfile.grass2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "grass2">
+Grass
+</label>
+</div>
+<div class = "litter">
+<input type = "checkbox" id = "litter2" name = "litter2" ng-model = "mainfile.litter2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "litter2">
+Litter
+</label>
+</div>
+<div class = "stool">
+<input type = "checkbox" id = "stool2" name = "stool2" ng-model = "mainfile.stool2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "stool2">
+Stool
+</label>
+</div>
+<div class = "cloth">
+<input type = "checkbox" id = "cloth2" name = "cloth2" ng-model = "mainfile.cloth2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "cloth2">
+Cloth
+</label>
+</div>
+<div class = "licks">
+<input type = "checkbox" id = "licks2" name = "licks2" ng-model = "mainfile.licks2" ng-disabled = "mainfile.nounusual == true" />
+<label for = "licks2">
+Licks Wall & Floor
+</label>
+</div>
+<div class = "form-inline">
+<label for = "other2">
+Any Other Stuff:
+</label>
+<input type = "text" class = "form-control" id = "other2" name = "other2" ng-model = "mainfile.otherunusual" ng-disabled = "((mainfile.nounusual == true) || (mainfile.mud2 == true) || (mainfile.grass2 == true) || (mainfile.litter2 == true) || (mainfile.stool2 == true) || (mainfile.cloth2 == true) || (mainfile.licks2 == true))" placeholder = "Other Issues(Optional)..." required/>
+</div>
+</form>
+		<div class = "buttonGroup1">
+		<a ng-href = '#/healthconddogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/curfooddogs'><button class="btn btn-primary" ng-hide = "((mainfile.nounusual == false || mainfile.nounusual == undefined) && (mainfile.mud2 == false || mainfile.mud2 == undefined) && (mainfile.grass2 == false || mainfile.grass2 == undefined) && (mainfile.litter2 == false || mainfile.litter2 == undefined) && (mainfile.stool2 == false || mainfile.stool2 == undefined) && (mainfile.cloth2 == false || mainfile.cloth2 == undefined) && (mainfile.licks2 == false || mainfile.licks2 == undefined))" ng-show = "unusualshiz.other2.$valid" ng-click="post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		<button class="btn btn-primary" ng-show = "((mainfile.nounusual == false || mainfile.nounusual == undefined) && (mainfile.mud2 == false || mainfile.mud2 == undefined) && (mainfile.grass2 == false || mainfile.grass2 == undefined) && (mainfile.litter2 == false || mainfile.litter2 == undefined) && (mainfile.stool2 == false || mainfile.stool2 == undefined) && (mainfile.cloth2 == false || mainfile.cloth2 == undefined) && (mainfile.licks2 == false || mainfile.licks2 == undefined)) && (unusualshiz.other2.$invalid || unusualshiz.other2.$pristine)">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button>
+		</div>
+</section>

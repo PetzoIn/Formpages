@@ -1,0 +1,83 @@
+<section>
+<span> <b>Any medical conditions we should know about ?</b> </span>
+<form class = "form-horizontal" name="healthcond">
+<div class = "noissues">
+<input type = "checkbox" id = "noissues2" name = "noissues2" ng-model = "mainfile.noissues2">
+<label for = "noissues2">
+No Health Issues
+</label>
+</input>
+</div>
+<div class = "jandm">
+<input type= "checkbox" id = "jandm2" name = "jandm2" ng-model = "mainfile.jandm2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "jandm2">
+Joints & Mobility
+</label>
+</input>
+</div>
+<div class = "sandc">
+<input type = "checkbox" id = "sandc2" name = "sandc2" ng-model = "mainfile.sandc2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "sandc2">
+Skin and Coat
+</label>
+</input>
+</div>
+<div class = "gastro">
+<input type = "checkbox" id = "gastro2" name = "gastro2" ng-model = "mainfile.gastro2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "gastro2">
+Gastro and Digestion
+</label>
+</input>
+</div>
+<div class = "diabetes">
+<input type = "checkbox" id = "diabetes2" name = "diabetes2" ng-model = "mainfile.diabetes2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "diabetes2">
+Diabetes
+</label>
+</input>
+</div>
+<div class = "liver">
+<input type = "checkbox" id = "liver2" name = "liver2" ng-model = "mainfile.liver2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "liver2">
+Liver Disorder
+</label>
+</input>
+</div>
+<div class = "kidney">
+<input type = "checkbox" id = "kidney2" name = "kidney2" ng-model = "mainfile.kidney2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "kidney2">
+Kidney Disease
+</label>
+</input>
+</div>
+<div class = "cardiac">
+<input type = "checkbox" id = "cardiac2" name = "cardiac2" ng-model = "mainfile.cardiac2" ng-disabled = "mainfile.noissues2 == true">
+<label for = "cardiac2">
+Cardio Vascular Disorder
+</label>
+</input>
+</div>
+<div class = "form-inline">
+<label for = "other2">
+Any Other Issues:
+</label>
+<input type = "text" name = "other2" class = "form-control" id = "other2" ng-model = "mainfile.other2" ng-disabled = "((mainfile.noissues2 == true) || (mainfile.jandm2 == true) || (mainfile.sandc2 == true) || (mainfile.gastro2 == true) || (mainfile.diabetes2 == true) || (mainfile.liver2 == true) || (mainfile.kidney2 == true) || (mainfile.cardiac2 == true))" placeholder = "Other Issues(Optional)..." required/>
+</div>
+</form>
+		<div class="buttonWrapper">
+		<div class = "buttonGroup1">
+		<a ng-href = '#/furtypedogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/unusualdogs'><button class="btn btn-primary" ng-hide = "((mainfile.noissues2 == false || mainfile.noissues2 == undefined) && (mainfile.jandm2 == false || mainfile.jandm2 == undefined) && (mainfile.sandc2 == false || mainfile.sandc2 == undefined) && (mainfile.gastro2 == false || mainfile.gastro2 == undefined) && (mainfile.diabetes2 == false || mainfile.diabetes2 == undefined) && (mainfile.liver2 == false || mainfile.liver2 == undefined) && (mainfile.kidney2 == false || mainfile.kidney2 == undefined) && (mainfile.cardiac2 == false || mainfile.cardiac2 == undefined))" ng-show = "healthcond.other2.$valid" ng-click="post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		<button class="btn btn-primary" ng-show = "((mainfile.noissues2 == false || mainfile.noissues2 == undefined) && (mainfile.jandm2 == false || mainfile.jandm2 == undefined) && (mainfile.sandc2 == false || mainfile.sandc2 == undefined) && (mainfile.gastro2 == false || mainfile.gastro2 == undefined) && (mainfile.diabetes2 == false || mainfile.diabetes2 == undefined) && (mainfile.liver2 == false || mainfile.liver2 == undefined) && (mainfile.kidney2 == false || mainfile.kidney2 == undefined) && (mainfile.cardiac2 == false || mainfile.cardiac2 == undefined)) && (healthcond.other2.$invalid || healthcond.other2.$pristine)">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button>
+		</div>
+		</div>
+</section>

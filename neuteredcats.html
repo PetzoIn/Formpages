@@ -1,0 +1,70 @@
+<section class="neutereddog">
+<aside class="neutereddogform">
+		<!---Neutered Form for cats Starts--->
+		<form class = "form-horizontal" name="catgender">
+			<!---Form--->
+			<div class="form-inline">
+				<label class="col-sm-2 control-label" for="catsex">Preference:</label>
+				<input list="gendercat" name="genderanimal" id="catsex" ng-model = "mainfile.genderanimal" class= "form-control" placeholder = "Enter The Gender Here..." required/>
+					<datalist id="gendercat">
+						<option ng-repeat = "g in gender" value = "{{g.sex}}"/>
+					</datalist>
+				<span ng-show = "catgender.genderanimal.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+				<span ng-show = "catgender.genderanimal.$invalid && catgender.genderanimal.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+			</div>
+			<label class = "neutered" ng-show = "(mainfile.genderanimal == 'M')">Is your Cat Neutered?</label>
+			<label class = "spayed" ng-show="(mainfile.genderanimal == 'F')">Is your Cat Spayed?</label>
+			<div class="form-inline" ng-show = "(mainfile.genderanimal == 'M') || (mainfile.genderanimal) == 'F'">
+					<label class={{neuteredtrue}} ng-click = "neuteredtrueclicked()" ng-model = "mainfile.neuteredtruebool">Yes</label>
+					<label class={{neuteredfalse}} ng-click = "neuteredfalseclicked()" ng-model = "mainfile.neuteredfalsebool">No</label>
+			</div>
+
+		</form>
+</aside>
+<!---Female Details --->
+<div class = "form-inline" ng-show = "(mainfile.genderanimal == 'F') && (neuteredfalse == 'btn btn-primary active')">
+<form name = "femalecond">
+<label class="col-sm-2 control-label" for="femcatcond">Female's Condition:</label>
+<input list="femalecatcond" name="femalestage" id="femcatcond" ng-model = "mainfile.femalestage" class= "form-control" placeholder = "Female Cat's Condition Here..." required/>
+					<datalist id="femalecatcond">
+						<option ng-repeat = "i in stage" value = "{{i}}"/>
+					</datalist>
+				<span ng-show = "femalecond.femalestage.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+				<span ng-show = "femalecond.femalestage.$invalid && femalecond.femalestage.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+</form>
+</div>
+<div class="lactation" ng-show="(mainfile.genderanimal == 'F') && (mainfile.femalestage == 'Lactation') && (neuteredfalse == 'btn btn-primary active')">
+<form class = "form-horizontal" name = "lact">
+			<div class="form-inline">
+				<label for="pupnumber" class="col-sm-2 control-label">Number of Kittens:</label>
+				<input type = "text" name = "pupnum" ng-model="mainfile.pupnum" class="form-control" id="pupnumber" placeholder="Number of Kittens Here..." required/>
+				<span ng-show = "lact.pupnum.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+				<span ng-show = "lact.pupnum.$invalid && lact.pupnum.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+			</div>
+			</div>
+</form>
+</div>
+<br/><br/>
+<div class="buttonWrapper">
+<div class = "buttonGroup" ng-show = "(lact.pupnum.$valid && catgender.genderanimal.$valid && femalecond.femalestage.$valid) || (mainfile.genderanimal == 'M') || (mainfile.genderanimal == 'F' && neuteredtrue == 'btn btn-primary active') || (mainfile.genderanimal == 'F' && neuteredfalse == 'btn btn-primary active' && (femalecond.femalestage.$valid && (mainfile.femalestage != 'Lactation')))">
+				<a ng-href = '#/birthdatescat'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/weightcats'><button class="btn btn-primary" ng-click = "post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+</div>
+<div class = "buttonGroup" ng-show = "(lact.pupnum.$valid && catgender.genderanimal.$valid && femalecond.femalestage.$valid) || (mainfile.genderanimal == 'M') || (mainfile.genderanimal == 'F' && neuteredtrue == 'btn btn-primary active') || (mainfile.genderanimal == 'F' && neuteredfalse == 'btn btn-primary active' && (femalecond.femalestage.$valid && (mainfile.femalestage != 'Lactation')))">
+		<a ng-href = '#/birthdatescat'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+		</button></a>
+			<button class="btn btn-primary">
+				Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+</div>
+</div>
+</section>

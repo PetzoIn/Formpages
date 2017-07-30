@@ -1,0 +1,25 @@
+<aside>
+		<!---Activity Level Form--->
+		
+		<form class = "form-inline">
+			<span class="activitytag">Activity Level of the dogs:</span>
+			<!---Slider--->
+			<div class="OptionSlider">
+				<rzslider rz-slider-model="slideractivitydog.value"
+				rz-slider-options="slideractivitydog.options"></rzslider>
+			</div>
+		</form>
+		<br/> <br/> <br/> <br/> 
+		<div class="buttonWrapper">
+		<div class = "buttonGroup">
+		<a ng-href = '#/weightdogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/furtypedogs'><button class="btn btn-primary" ng-click = "postslider4()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		</div>
+</aside>

@@ -1,0 +1,68 @@
+<section class="birthdatescat">
+<aside class="catbirthdateform">
+		<!---Birthday Form for cats Starts--->
+		<form class = "form-horizontal" name="catbirth">
+			<!---Form--->
+			<div class="form-inline">
+				<label for="date" class="col-sm-2 control-label">Let us know their Birthdate:</label>	
+					<input list="date" name="date" ng-model = "mainfile.date" class= "form-control" placeholder = "Date(Optional...)" maxlength = 2 ng-disabled = "catbirth.Years.$valid || catbirth.Month.$valid" required/>
+					<datalist id="date">
+						<option ng-repeat = "x in days" value = "{{x}}"/>
+					</datalist>
+					<span ng-show = "catbirth.date.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "catbirth.date.$invalid && catbirth.date.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+					<input list="month1" name="month1" ng-model = "mainfile.month1" class= "form-control" ng-disabled = "catbirth.Years.$valid || catbirth.Month.$valid" placeholder = "MM" maxlength = 10 required/>
+					<datalist id="month1">
+						<option ng-repeat = "y in months" value = "{{y.month}}"/>
+					</datalist>	
+					<span ng-show = "catbirth.month1.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "catbirth.month1.$invalid && catbirth.month1.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+					
+					<input list="year" name="year" ng-model = "mainfile.year" class= "form-control" ng-disabled = "catbirth.Years.$valid || catbirth.Month.$valid" placeholder = "YYYY" maxlength = 4 required/>
+					<datalist id="year">
+						<option ng-repeat = "z in years" value = "{{z}}"/>
+					</datalist>
+					<span ng-show = "catbirth.year.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "catbirth.year.$invalid && catbirth.year.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+			</div>
+			<span class="orsep"><b>OR</b></span>
+			<div class="form-inline">
+				<label for="Years" class="col-sm-2 control-label">Let us know their age:</label>
+				<input list="yearfield" name="Years" ng-model = "mainfile.ageyear" class= "form-control" ng-disabled = "catbirth.year.$valid || catbirth.month1.$valid" placeholder = "YY" maxlength = 2 required/>
+					<datalist id="yearfield">
+						<option ng-repeat = "a in yearage" value = "{{a}}"/>
+					</datalist>
+					<span ng-show = "catbirth.Years.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "catbirth.Years.$invalid && catbirth.Years.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+				<input list="monthfield" name="Month" ng-model = "mainfile.agemonth" class= "form-control" ng-disabled = "catbirth.year.$valid || catbirth.month1.$valid" placeholder = "MM" maxlength = 2 required/>
+					<datalist id="monthfield">
+						<option ng-repeat = "b in monthage" value = "{{b}}"/>
+					</datalist>
+					<span ng-show = "catbirth.Month.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "catbirth.Month.$invalid && catbirth.Month.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+			</div>
+		</form>
+		<div class="buttonWrapper">
+		<div class = "buttonGroup" ng-show = "((catbirth.month1.$valid) && (catbirth.year.$valid)) || ((catbirth.Years.$valid) && (catbirth.Month.$valid))">
+				<a ng-href = '#/catbutton'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/neuteredcats'><button class="btn btn-primary" ng-click = "post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		<div class = "buttonGroup" ng-show = "(catbirth.month1.$pristine || catbirth.month1.$invalid) || (catbirth.year.$pristine || catbirth.year.$invalid)" ng-hide = "((catbirth.Years.$valid) && (catbirth.Month.$valid))">
+		<a ng-href = '#/catbutton'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+		</button></a>
+			<button class="btn btn-primary">
+				Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+		</div>
+</aside>
+</section>

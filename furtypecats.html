@@ -1,0 +1,31 @@
+<aside>
+		<!---Fur Type Form--->
+		
+		<form class = "form-inline">
+			<span class="stooltag">How's the Cat's Stool Consistency :</span><br/>
+			<div class="StoolOptions">
+				<label class={{looseclickedaction}} ng-click = "looseclicked()">Loose</label>
+				<label class={{normalclickedaction}} ng-click = "normalclicked()">Normal</label>
+				<label class={{hardclickedaction}} ng-click = "hardclicked()">Hard</label>
+			</div>
+			<span class="activitytag">Fur Type of the Cat:</span>
+			<!---Slider--->
+			<div class="OptionSlider">
+				<rzslider rz-slider-model="sliderfurtypecat.value"
+				rz-slider-options="sliderfurtypecat.options"></rzslider>
+			</div>
+		</form>
+		<br/> <br/> <br/> <br/>
+		<div class="buttonWrapper">
+		<div class = "buttonGroup1">
+		<a ng-href = '#/activitylevelcats'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/healthcondcats'><button class="btn btn-primary" ng-click = "postslider7()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		</div>
+</aside>

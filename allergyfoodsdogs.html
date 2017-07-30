@@ -1,0 +1,55 @@
+<section>
+<span> <b>Any Particular Ingredient your dog is allergic to ?</b> </span>
+<form class = "form-horizontal" name = "allergicfoods">
+<div class = "noissues">
+<input type = "checkbox" id = "noissues2" name = "noissues2" ng-model = "mainfile.noallergies" />
+<label for = "noissues2">
+None
+</label>
+</div>
+<div class = "egg">
+<input type = "checkbox" id = "egg2" ng-model = "mainfile.egg2" ng-disabled = "mainfile.noallergies == true" />
+<label for = "egg2">
+Egg
+</label>
+</div>
+<div class = "Chicken">
+<input type = "checkbox" id = "chicken2" ng-model = "mainfile.chicken2" ng-disabled = "mainfile.noallergies == true" />
+<label for = "chicken2">
+Chicken
+</label>
+</div>
+<div class = "lamb">
+<input type = "checkbox" id = "lamb2" ng-model = "mainfile.lamb2" ng-disabled = "mainfile.noallergies == true" />
+<label for = "lamb2">
+Lamb
+</label>
+</div>
+<div class = "fish">
+<input type = "checkbox" id = "fish2" ng-model = "mainfile.fish2" ng-disabled = "mainfile.noallergies == true" />
+<label for = "fish2">
+Fish
+</label>
+</div>
+<div class = "form-inline">
+<label for = "other2">
+Any Other Stuff:
+</label>
+<input type = "text" class = "form-control" id = "other2" name = "other2" ng-model = "mainfile.otherallergies" ng-disabled = "((mainfile.noallergies == true) || (mainfile.egg2 == true) || (mainfile.chicken2 == true) || (mainfile.lamb2 == true) || (mainfile.fish2 == true))" placeholder = "Other Allergy Foods Here(Optional)..." required />
+</div>
+</form>
+		<div class = "buttonGroup1">
+		<a ng-href = '#/curfooddogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/treatsdogs'><button class="btn btn-primary" ng-hide = "((mainfile.noallergies == false || mainfile.noallergies == undefined) && (mainfile.egg2 == false || mainfile.egg2 == undefined) && (mainfile.chicken2 == false || mainfile.chicken2 == undefined) && (mainfile.lamb2 == false || mainfile.lamb2 == undefined) && (mainfile.fish2 == false || mainfile.fish2 == undefined))" ng-show = "allergicfoods.other2.$valid" ng-click="post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		<button class="btn btn-primary" ng-show = "((mainfile.noallergies == false || mainfile.noallergies == undefined) && (mainfile.egg2 == false || mainfile.egg2 == undefined) && (mainfile.chicken2 == false || mainfile.chicken2 == undefined) && (mainfile.lamb2 == false || mainfile.lamb2 == undefined) && (mainfile.fish2 == false || mainfile.fish2 == undefined)) && (allergicfoods.other2.$invalid || allergicfoods.other2.$pristine)">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button>
+		</div>
+</section>

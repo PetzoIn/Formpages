@@ -1,0 +1,125 @@
+.glyphicon-remove-sign
+{
+	color : #990000;
+}	
+input.ng-touched.ng-invalid
+{
+	border-color : #990000;
+}
+input.ng-valid
+{
+	border-color : #006400;
+}
+.glyphicon-ok-sign
+{
+	color : #006400;
+}
+.col-sm-10
+{
+	font-size : 20px;
+}
+.emailpage
+{
+	background-color : #e8e5e5;
+	width : 500px;
+	height : 500px;
+	box-shadow : 10px 10px 5px #332e2a;
+	position : absolute;
+	left:30%;
+	top:10%;
+	border : 2px solid ;
+	border-color : #654321;
+	border-radius : 20px;
+}
+.topwrapper
+{
+	
+	background-color : #654321;
+	border-top-left-radius : 20px;
+	border-top-right-radius : 20px;
+	height : 35px;
+	border : 2px solid;
+	border-color : #332e2a;
+	
+}
+.buttonGroup
+{
+	color : #654321;
+}
+a
+{
+background-color : #654321;	
+}
+.mailtext
+{
+	padding-top : 2px;
+	padding-bottom : 4px;
+	color : #d5a97d;
+	font-family: "Comic Sans MS", Times, serif;
+	font-size : 20px;
+	
+}
+
+
+.btn:hover, .btn:focus
+{
+	background-position: 0 -45px;
+	background-color: #4c3217 !important;
+	
+}
+button {
+  height: 45px;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #000;
+  border-radius: 20px !important;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  background-position: 0 -45px;
+	background-color: #654321 !important;
+	width : 310px;
+	position : relative;
+	left : 10px;
+  }
+
+button:hover {
+  background-color: #332e2a !important;
+  box-shadow: 0px 15px 20px rgba(51, 46, 42, 0.4) !important;
+  color: #fff;
+  transform: translateY(-7px);
+}
+.mailpage
+{
+	position : relative;
+	top: 100px;
+	left: 20%;
+}
+.buttonGroup
+{
+	position : relative;
+	top : 100px;
+}
+#emailadd
+{
+	border-radius : 20px;
+	width : 300px;
+	height : 45px; 
+	border : 2px solid;
+	border-color : #654321;
+}
+#emailadd:active , #emailadd:focus
+{
+	border-color : #332e2a;
+}
+#maillbl
+{
+	color : #654321; 
+	position : relative;
+	left :30px;
+	font-weight : 10000;
+	font-family: 'Comic Sans MS', sans-serif;
+	font-size : 20px;
+	padding-bottom : 8px;
+}

@@ -1,0 +1,93 @@
+<section ng-controller="strtctrl2" class = "breeddog">
+	<label class={{breedclickedaction}} ng-click = "breedclicked()">Breed</label>
+	<label class={{crossbreedclickedaction}} ng-click = "crossbreedclicked()">CrossBreed</label>
+	<!---DogBreed Information--->
+	<aside ng-show = "showmebreed">
+		<!---DogBreed Form Starts--->
+		<form class = "form-horizontal" name = "oneBreed">
+			<!---Name of the DogBreed--->
+				<label for="breedname" class="col-sm-2 control-label">Breed's Name:</label>
+				<div class="form-inline">
+					<div class="col-sm-10">
+					<input list="dogbreeds" name="OneBreed" class= "form-control" ng-model = "mainfile.OneBreed" placeholder = "Dog's Breed Here..." required/>
+					<datalist id="dogbreeds">
+						<option ng-repeat = "g in breeds|orderBy : name" value = "{{g.name}}"/>
+					</datalist>
+					<span ng-show = "oneBreed.OneBreed.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "oneBreed.OneBreed.$invalid && oneBreed.OneBreed.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+					</div>
+				</div>
+		</form>
+		<div class = "buttonGroup1" ng-show = "oneBreed.OneBreed.$valid">
+		<a ng-href = '#/petname'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/birthdatesdog'><button class="btn btn-primary" ng-click = "post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		<div class = "buttonGroup" ng-show = "oneBreed.OneBreed.$pristine || oneBreed.OneBreed.$invalid" ng-hide = "oneBreed.OneBreed.$valid">
+		<a ng-href = '#/petname'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+		</button></a>
+			<button class="btn btn-primary">
+				Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+	</aside>
+	<!---Dog CrossBreed Information--->
+	<aside ng-show="showmecrossbreed">
+		<!---Dog Breed Form--->
+		<form class = "form-horizontal" name = "crossBreed">
+			<!---Name of the Breed 1 and 2--->
+			<label for = "dogbreeds1" class="col-sm-2 control-label">Dog's First Breed:</label>
+			<div class="form-inline">
+				<div class="col-sm-10">
+					<input list="dogbreeds1" name="CrossBreed1" ng-model = "mainfile.CrossBreed1" class= "form-control" placeholder = "Dog's First Breed Here..." required/>
+					<datalist id="dogbreeds1">
+						<option ng-repeat = "y in breeds|orderBy : name" value = "{{y.name}}"/>
+					</datalist>
+					<span ng-show = "crossBreed.CrossBreed1.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "crossBreed.CrossBreed1.$invalid && crossBreed.CrossBreed1.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+				</div>
+			</div>
+			<br/><br/>
+			<label for = "dogbreeds2" class="col-sm-2 control-label">Dog's Second Breed:</label>
+			<div class="form-inline">
+				<div class="col-sm-10">	
+					<input list="dogbreeds2" name="CrossBreed2" ng-model = "mainfile.CrossBreed2" class= "form-control" placeholder = "Dog's Second Breed Here..." required/>
+					<datalist id="dogbreeds2">
+						<option ng-repeat = "z in breeds|orderBy : name" value = "{{z.name}}"/>
+					</datalist>
+					<span ng-show = "crossBreed.CrossBreed2.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "crossBreed.CrossBreed2.$invalid && crossBreed.CrossBreed2.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+				</div>
+			</div>
+		</form>
+		<div class = "buttonGroup1" ng-show = "(crossBreed.CrossBreed1.$valid) && (crossBreed.CrossBreed2.$valid)">
+		<a ng-href = '#/petname'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/birthdatesdog'><button class="btn btn-primary" ng-click = "post()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		<div class = "buttonGroup" ng-show = "(crossBreed.CrossBreed1.$pristine || crossBreed.CrossBreed1.$invalid) || (crossBreed.CrossBreed2.$pristine || crossBreed.CrossBreed2.$invalid)">
+		<a ng-href = '#/petname'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+		</button></a>
+			<button class="btn btn-primary">
+				Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+	</aside>
+	
+</section>

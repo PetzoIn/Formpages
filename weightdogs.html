@@ -1,0 +1,44 @@
+<aside>
+		<!---Weight Form Starts--->
+		
+		<form class = "form-inline" name = "dogweight">
+			<!---Weight of the Dog--->
+			<div class="form-group">
+				<label for="weightdog">Weight of the Dog:</label>
+				<div class="input-group">
+					<input type = "text"  name = "dogwt" class="form-control" id="weightdog" ng-model = "mainfile.dogwt" placeholder="Their Weight Here..." required/>
+					<span class="input-group-addon">Kg</span>
+					<span ng-show = "dogweight.dogwt.$valid" class= "glyphicon glyphicon-ok-sign"></span>
+					<span ng-show = "dogweight.dogwt.$invalid && dogweight.dogwt.$touched" class= "glyphicon glyphicon-remove-sign"></span>
+				</div>
+			</div>
+			<!---Slider--->
+			<div class="OptionSlider">
+				<rzslider rz-slider-model="sliderdog.value"
+				rz-slider-options="sliderdog.options"></rzslider>
+			</div>
+		</form>
+		<br/> <br/> <br/> <br/> 
+		<div class="buttonWrapper">
+		<div class = "buttonGroup" ng-show = "dogweight.dogwt.$valid">
+		<a ng-href = '#/neutereddogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/activityleveldogs'><button class="btn btn-primary" ng-click = "postslider2()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		<div class = "buttonGroup" ng-show = "dogweight.dogwt.$invalid || dogweight.dogwt.$pristine">
+			<a ng-href = '#/neutereddogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+			</button></a>
+			<button class="btn btn-primary">
+				Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</button>
+		</div>
+		</div>
+</aside>

@@ -1,0 +1,31 @@
+<aside>
+		<!---Activity Level Form--->
+		
+		<form class = "form-inline">
+			<span class="stooltag">How's the dog's Stool Consistency :</span><br/>
+			<div class="StoolOptions">
+				<label class={{looseclickedaction}} ng-click = "looseclicked()" ng-bind = "lse">Loose</label>
+				<label class={{normalclickedaction}} ng-click = "normalclicked()" ng-bind = "nrml">Normal</label>
+				<label class={{hardclickedaction}} ng-click = "hardclicked()" ng-bind = "hrd">Hard</label>
+			</div>
+			<span class="activitytag">Fur Type of the Dog:</span>
+			<!---Slider--->
+			<div class="OptionSlider">
+				<rzslider rz-slider-model="sliderfurtypedog.value"
+				rz-slider-options="sliderfurtypedog.options"></rzslider>
+			</div>
+		</form>
+		<br/> <br/> <br/> <br/>
+		<div class="buttonWrapper">
+		<div class = "buttonGroup1">
+		<a ng-href = '#/activityleveldogs'><button class="btn btn-primary">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		</button></a>
+		<a ng-href = '#/healthconddogs'><button class="btn btn-primary" ng-click = "postslider6()">
+			Next
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button></a>
+		</div>
+		</div>
+</aside>
